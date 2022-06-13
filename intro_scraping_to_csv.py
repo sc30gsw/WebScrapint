@@ -44,7 +44,7 @@ df['項目'] = keys
 df['値'] = values
 
 # csvに出力する
-df.to_csv('./data/講師情報.csv')
+df.to_csv('./data/講師情報.csv', index=False)
 
 
 # ブラウザを閉じる
