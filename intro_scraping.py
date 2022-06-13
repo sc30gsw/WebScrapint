@@ -1,11 +1,16 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from time import sleep
 
 import config
 
+options = Options()
+# ヘッドレスモードに設定
+options.add_argument('--headless')
+
 # ブラウザ(Chrome)の起動
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(options=options)
 
 # 指定したWebページアクセスする
 url = 'https://scraping-for-beginner.herokuapp.com/login_page'
