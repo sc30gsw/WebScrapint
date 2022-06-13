@@ -25,7 +25,21 @@ sleep(1)
 
 # ログインボタンをクリックする
 elem_login_btn.click()
-sleep(4)
+sleep(1)
+
+# Webページの情報を取得する
+elem_name = browser.find_element(By.ID, 'name')
+elem_company = browser.find_element(By.ID, 'company')
+elem_birthday = browser.find_element(By.ID, 'birthday')
+elem_come_from = browser.find_element(By.ID, 'come_from')
+elem_hobby = browser.find_element(By.ID, 'hobby')
+
+# 取得要素のテキスト情報を取得
+name = elem_name.text
+company = elem_company.text
+birthday = elem_birthday.text
+come_from = elem_come_from.text
+hobby = elem_hobby.text
 
 # ブラウザを閉じる
 browser.quit()
