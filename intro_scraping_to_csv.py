@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
+import pandas as pd
 
 import config
 
@@ -36,6 +37,15 @@ elems_th = browser.find_elements(By.TAG_NAME, 'th')
 # 取得要素のテキスト情報を各リストに格納する
 keys = [elem_th.text for elem_th in elems_th]
 values = [elem_td.text for elem_td in elems_td]
+
+df = pd.DataFrame()
+# 列に各リストを設定
+df['項目'] = keys
+df['値'] = values
+
+# csvに出力する
+df.to_csv('./data/講師情報.csv')
+
 
 # ブラウザを閉じる
 browser.quit()
