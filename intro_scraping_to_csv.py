@@ -28,18 +28,14 @@ elem_login_btn.click()
 sleep(1)
 
 # Webページの情報を取得する
-elem_name = browser.find_element(By.ID, 'name')
-elem_company = browser.find_element(By.ID, 'company')
-elem_birthday = browser.find_element(By.ID, 'birthday')
-elem_come_from = browser.find_element(By.ID, 'come_from')
-elem_hobby = browser.find_element(By.ID, 'hobby')
+# tdタグを取得
+elems_td = browser.find_elements(By.TAG_NAME, 'td')
+# thタグを取得
+elems_th = browser.find_elements(By.TAG_NAME, 'th')
 
-# 取得要素のテキスト情報を取得
-name = elem_name.text
-company = elem_company.text
-birthday = elem_birthday.text
-come_from = elem_come_from.text
-hobby = elem_hobby.text
+# 取得要素のテキスト情報を各リストに格納する
+keys = [elem_th.text for elem_th in elems_th]
+values = [elem_td.text for elem_td in elems_td]
 
 # ブラウザを閉じる
 browser.quit()
