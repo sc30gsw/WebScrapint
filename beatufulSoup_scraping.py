@@ -13,9 +13,9 @@ soup = BeautifulSoup(res.text, 'html.parser')
 soup.find_all('p', attrs={'class': 'subscribers'})
 
 # ページ上の受講生数を取得
-subscribers = soup.find_all('p', attrs={'class': 'subscribers'})[0]
+subscribers = soup.select('.subscribers')[0]
 n_subscribers = int(subscribers.text.split('：')[1])
 
 # ページ上のレビュー数を取得
-reviews = soup.find_all('p', attrs={'class': 'reviews'})[0]
+reviews = soup.select('.reviews')[0]
 n_reviews = int(reviews.text.split('：')[1])
