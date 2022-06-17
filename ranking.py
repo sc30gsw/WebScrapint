@@ -49,4 +49,6 @@ for spot in spots:
   
   # 観光地情報の辞書をリストに追加する
   data.append(datum)
-  
+
+# 観光地情報のリストをDataFrameに渡す
+df = pd.DataFrame(data)
