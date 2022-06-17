@@ -21,3 +21,6 @@ spot_name = spot.find('div', attrs={'class': 'u_title'})
 # 観光地のタイトルからspanを抽出する
 spot_name.find('span', attrs={'class': 'badge'}).extract()
 spot_name = spot_name.text.replace('\n', '')
+
+# 評点
+eval_num = float(spot.find('div', attrs={'class': 'u_rankBox'}).text.replace('\n', ''))
